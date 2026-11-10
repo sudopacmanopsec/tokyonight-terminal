@@ -1,0 +1,57 @@
+  tmux cheat sheet      prefix = Ctrl+Space      (press prefix, let go, then the key)
+
+== Basics ==
+  prefix r              reload ~/.config/tmux/tmux.conf
+  prefix ?              this help (q to close)
+  prefix d              detach (session keeps running)
+  prefix :              tmux command prompt
+  Ctrl+d                close the current shell / pane
+
+== Sessions ==
+  tmux new -As main     attach to "main", or create it
+  tmux ls               list sessions
+  tmux attach -t name   attach to a session by name
+  prefix f              fuzzy-switch session (fzf popup)
+  prefix n              new named session (prompts for a name)
+  prefix s              session tree
+  prefix $              rename session
+  prefix ( or )         previous / next session
+
+== Windows (tabs) ==
+  prefix c              new window in the current directory
+  Alt+1 .. Alt+9        jump straight to window 1..9
+  prefix p              previous window
+  prefix w              window list
+  prefix ,              rename window
+  prefix &              kill window
+
+== Panes ==
+  prefix |              split side by side (same directory)
+  prefix -              split top / bottom (same directory)
+  Alt+h j k l           move between panes, no prefix
+  prefix h j k l        move between panes
+  prefix H J K L        resize (hold the key to repeat)
+  prefix z              zoom the pane full screen, press again to undo
+  prefix x              close the pane
+  prefix t              floating scratch terminal (current directory)
+  prefix q              flash pane numbers
+  prefix Space          cycle layouts
+  prefix { or }         swap pane with previous / next
+
+== Copy mode (scrollback) ==
+  prefix [              enter copy mode (or just scroll with the mouse)
+  j k  Ctrl+u Ctrl+d    move / half page up and down
+  /  or  ?              search forward / backward
+  n  or  N              next / previous match
+  v                     start selection
+  y                     copy to the system clipboard (wl-copy) and leave
+  q                     leave copy mode without copying
+
+== Mouse ==
+  click                 focus a pane
+  drag a border         resize panes
+  scroll wheel          scroll back through output
+
+== If something goes weird ==
+  tmux kill-server      stop everything and start fresh (all sessions end)
+  echo $TERM            should say tmux-256color inside tmux

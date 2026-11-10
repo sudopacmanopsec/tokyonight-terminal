@@ -1,0 +1,113 @@
+=====================================================================
+  NVIM PLAYGROUND     open it with:  nvim nvim-playground.txt
+=====================================================================
+  Messed something up?   u = undo       :e!  = reload the file from disk
+  Nothing here matters, so never save.   Quit anytime with  :q!
+  Stuck on a key?        :KeyHelp   shows the cheat sheet
+  Each exercise says DO. Do it, then move on to the next one.
+  Make sure you are in NORMAL mode first (press Esc).
+---------------------------------------------------------------------
+
+[1]  TOP, BOTTOM AND LINE NUMBERS
+  DO: G          jump to the very bottom of the file
+  DO: gg         jump back to the very top
+  DO: 30G        jump to line 30  (you should land on the arrow below)
+  DO: Ctrl+d     half a page down.  Ctrl+u = half a page up
+  DO: H  M  L    top / middle / bottom of the visible screen
+  DO: zz         centre the current line on screen
+  (filler so line 30 exists)
+  .
+  .
+  .
+  .
+  .
+  .
+  .
+  .
+  .
+  .
+  .
+>>>>>>>>>>  YOU LANDED ON LINE 30  <<<<<<<<<<
+
+[2]  INSIDE A LINE
+  The quick brown fox jumps over the lazy dog, then (briefly) rests.
+  DO: 0          start of the line.    ^ = first letter.    $ = end of line
+  DO: w  b  e    next word / back a word / end of the word
+  DO: f(         jump to the next ( on the line.   ; repeats it.   , goes back
+  DO: t(         like f( but stops just before the bracket
+
+  apples, bananas, cherries, dates, elderberries, figs, grapes
+  DO: f,         then press ;  ;  ;   to hop comma by comma
+
+[3]  BRACKETS AND QUOTES
+  function greet(name, greeting) {
+    if (name == "") {
+      return [greeting, "friend"];
+    }
+    return [greeting, name, "welcome to (the playground)"];
+  }
+
+  DO: put the cursor on any bracket and press  %     it jumps to its partner
+  DO: cursor on the word  return  in the middle of the function, press  [{
+      it jumps to the { you are inside of.  Ctrl+o takes you back
+  DO: cursor inside (name, greeting) then  di(   deletes inside the brackets.  u to undo
+  DO: same spot,  da(   deletes the brackets too.  u to undo
+  DO: cursor inside "friend" then  ci"   type  pal   then Esc
+  DO: cursor inside [greeting, name, ...] then  vi[   selects inside, then y, then p
+  DO: cursor inside the {} block then  ci{   wipes the whole block.  u to undo
+
+[4]  SEARCH
+  The needle is hiding in this paragraph. A needle can be small. Look for
+  the needle again further down, there is another needle near the end, and
+  one marker here and one marker there, and a final marker at the bottom.
+  DO: /needle  then Enter     jumps to the first match
+  DO: n          next match.     N = previous match
+  DO: put the cursor on the word  marker  and press  *   finds the next marker
+  DO: #          same as * but searches backwards
+  DO: :noh       clear the search highlight when you are done
+
+[5]  JUMPING BACK AND FORTH
+  DO: press G (jump to the bottom), then Ctrl+o    you are back where you were
+  DO: now press Ctrl+i                              forward again
+  DO: /needle  then Enter, then Ctrl+o              (searching also adds a jump) back to here
+  Ctrl+o is the "undo for moving around".  Use it after gd, searches, G, etc.
+
+[6]  EDITING
+  DO: dd on the line below deletes it.  u brings it back.  Ctrl+r redoes
+  Delete this whole line with dd
+  DO: yy on the line below copies it.  Then press p to paste it underneath
+  Copy this whole line with yy then paste it
+  DO: cw on the word  wrong  changes it.  Type a new word, then Esc
+  This sentence has one wrong word in it.
+  DO: o opens a new line below and starts typing.  O does it above.  Esc to stop
+  DO: A adds text at the end of the line.  I adds at the start
+  Add something to the end of me
+
+  Now the dot trick.  Turn all three TODO into DONE using only  n  and  .
+  TODO  write the notes
+  TODO  fix the bug
+  TODO  go for a walk
+  DO: /TODO then Enter,  cw  DONE  Esc,   then  n  .  n  .
+      (.  repeats your last change.  It is the single best key in nvim)
+
+  DO: V on this line selects it, j extends down, then d deletes the lines.  u to undo
+  Line A to select
+  Line B to select
+  Line C to select
+
+[7]  YOUR OWN SHORTCUTS  (leader is Space)
+  DO: Space p      go to file.  Type  playground  and press Enter
+  DO: Space /      search every file in the project
+  DO: Space e      toggle the file sidebar.  q closes it
+  DO: Space n n    make a new file.  Type  scratch/test.txt  and Enter
+  DO: Space h k    the full nvim cheat sheet.  q closes it
+  DO: Space h t    the tmux cheat sheet
+
+[8]  CHALLENGE
+  Do these without looking at the keys above:
+    1. Go to the top of the file.
+    2. Jump to the word  marker  further up and change it to  done.
+    3. Delete everything inside the next pair of quotes.
+    4. Go to the bottom and come back with Ctrl+o.
+
+                                                    ---  FINISH  ---
