@@ -15,7 +15,7 @@ modules that you **copy and source yourself**.
 ## Install nvim + tmux
 
 ```sh
-git clone <your-repo-url> tokyonight-terminal
+git clone https://github.com/sudopacmanopsec/tokyonight-terminal/edit/main/README.md
 cd tokyonight-terminal
 ./install.sh            # or ./install.sh --link  to symlink instead of copy
 ```
