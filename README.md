@@ -7,7 +7,7 @@ modules that you **copy and source yourself**.
 
 | Part | What you get | How it gets there |
 |---|---|---|
-| `nvim/` | NvChad-style dashboard, VSCode-style quick open / palette / project search, file maker (new, rename, copy, delete), a left file sidebar, and two cheat-sheet popups (`:KeyHelp`, `:TmuxHelp`) | `./install.sh` |
+| `nvim/` | NvChad-style dashboard, VSCode-style quick open / palette / project search, file maker (new, rename, copy, delete), and two cheat-sheet popups (`:KeyHelp`, `:TmuxHelp`) | `./install.sh` |
 | `tmux/` | Simple Tokyo Night config, `Ctrl+Space` prefix, vim-style panes, fzf session switcher, cheat sheet on `prefix ?` | `./install.sh` |
 | `practice/` | `nvim-playground.txt`, a file of guided exercises | `./install.sh` |
 | `zsh/` | fzf-tab with Tokyo Night colors, `nf` file maker, `Ctrl+P` / `Ctrl+F` pickers, aliases, plugin loader that cannot fail silently | **copy it yourself** (below) |
@@ -15,7 +15,7 @@ modules that you **copy and source yourself**.
 ## Install nvim + tmux
 
 ```sh
-git clone https://github.com/sudopacmanopsec/tokyonight-terminal/edit/main/README.md
+git clone https://github.com/sudopacmanopsec/tokyonight-terminal.git
 cd tokyonight-terminal
 ./install.sh            # or ./install.sh --link  to symlink instead of copy
 ```
