@@ -1,13 +1,12 @@
 # tokyonight-terminal
 
 A Tokyo Night terminal workflow for **zsh + tmux + Neovim**, built on top of
-[tonybanters/nvim](https://github.com/tonybanters/nvim). Nothing here replaces your
-setup: the nvim files are drop-ins, the tmux config is its own file, and the zsh part is a set of
+[tonybanters/nvim](https://github.com/tonybanters/nvim). [tonybanters/tmux](https://github.com/tonybanters/tmux). lots of credits to him, zsh part is a set of
 modules that you **copy and source yourself**.
 
 | Part | What you get | How it gets there |
 |---|---|---|
-| `nvim/` | NvChad-style dashboard, VSCode-style quick open / palette / project search, file maker (new, rename, copy, delete), and two cheat-sheet popups (`:KeyHelp`, `:TmuxHelp`) | `./install.sh` |
+| `nvim/` | NvChad-style dashboard (<leader>-e), VSCode-style quick open / palette / project search, file maker (new, rename, copy, delete), and two cheat-sheet popups (`:KeyHelp`, `:TmuxHelp`) | `./install.sh` |
 | `tmux/` | tonybanters' tmux config, `Ctrl+A` prefix, vim-style panes, cheat sheet via `tmh` | `./install.sh` |
 | `practice/` | `nvim-playground.txt`, a file of guided exercises | `./install.sh` |
 | `zsh/` | fzf-tab with Tokyo Night colors, `nf` file maker, `Ctrl+P` / `Ctrl+F` pickers, aliases, plugin loader that cannot fail silently | **copy it yourself** (below) |
