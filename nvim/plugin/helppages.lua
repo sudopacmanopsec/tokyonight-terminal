@@ -1,7 +1,7 @@
 -- ~/.config/nvim/plugin/helppages.lua
 -- Drop-in cheat-sheet popups. Touches none of tonybanters' files or his plugin manager.
 --   :KeyHelp   or <leader>hk   nvim keybinds (read from his config), Telescope, Harpoon, LSP
---   :TmuxHelp  or <leader>ht   tmux cheat sheet (reads ~/.config/tmux/help.txt, same file as tmux prefix + ?)
+--   :TmuxHelp  or <leader>ht   tmux cheat sheet (reads ~/.config/tmux/help.txt)
 -- In the popup: j/k/Ctrl+d/Ctrl+u scroll, / searches, q or <Esc> closes.
 
 if vim.g.loaded_helppages then return end
@@ -211,7 +211,7 @@ function M.tmux()
     lines[#lines + 1] = l
   end
   f:close()
-  local foot = "  q / Esc close   ·   / search   ·   inside tmux: prefix + ?"
+  local foot = "  q / Esc close   ·   / search   ·   tmux: run tmh"
   lines[#lines + 1] = ""
   marks[#marks + 1] = { #lines, "HelpDim", 0, #foot }
   lines[#lines + 1] = foot

@@ -1,8 +1,9 @@
-  tmux cheat sheet      prefix = Ctrl+Space      (press prefix, let go, then the key)
+  tmux cheat sheet      prefix = Ctrl+A      (press prefix, let go, then the key)
+  Ctrl+A Ctrl+A sends a literal Ctrl+A to the program (e.g. shell "go to line start")
 
 == Basics ==
   prefix r              reload ~/.config/tmux/tmux.conf
-  prefix ?              this help (q to close)
+  prefix ?              list every key binding (q to close)
   prefix d              detach (session keeps running)
   prefix :              tmux command prompt
   Ctrl+d                close the current shell / pane
@@ -11,16 +12,15 @@
   tmux new -As main     attach to "main", or create it
   tmux ls               list sessions
   tmux attach -t name   attach to a session by name
-  prefix f              fuzzy-switch session (fzf popup)
-  prefix n              new named session (prompts for a name)
   prefix s              session tree
   prefix $              rename session
   prefix ( or )         previous / next session
 
 == Windows (tabs) ==
-  prefix c              new window in the current directory
-  Alt+1 .. Alt+9        jump straight to window 1..9
-  prefix p              previous window
+  prefix c              new window
+  Alt+1 .. Alt+9        jump straight to window by number
+  Shift+Left / Right    previous / next window
+  prefix p / n          previous / next window
   prefix w              window list
   prefix ,              rename window
   prefix &              kill window
@@ -28,30 +28,17 @@
 == Panes ==
   prefix |              split side by side (same directory)
   prefix -              split top / bottom (same directory)
-  Alt+h j k l           move between panes, no prefix
-  prefix h j k l        move between panes
-  prefix H J K L        resize (hold the key to repeat)
-  prefix z              zoom the pane full screen, press again to undo
-  prefix x              close the pane
-  prefix t              floating scratch terminal (current directory)
-  prefix q              flash pane numbers
-  prefix Space          cycle layouts
+  prefix h j k l        move to the pane left / down / up / right
+  Alt+h j k l           same, without the prefix
+  prefix z              zoom the current pane (again to undo)
+  prefix x              kill pane
   prefix { or }         swap pane with previous / next
+  prefix Ctrl+arrows    resize the pane (hold Ctrl, tap arrows)
 
-== Copy mode (scrollback) ==
-  prefix [              enter copy mode (or just scroll with the mouse)
-  j k  Ctrl+u Ctrl+d    move / half page up and down
-  /  or  ?              search forward / backward
-  n  or  N              next / previous match
-  v                     start selection
-  y                     copy to the system clipboard (wl-copy) and leave
+== Copy mode (vi keys) ==
+  prefix [              enter copy mode
+  v                     begin selection
+  Ctrl+v                rectangle selection on/off
+  y                     copy selection and leave copy mode
   q                     leave copy mode without copying
-
-== Mouse ==
-  click                 focus a pane
-  drag a border         resize panes
-  scroll wheel          scroll back through output
-
-== If something goes weird ==
-  tmux kill-server      stop everything and start fresh (all sessions end)
-  echo $TERM            should say tmux-256color inside tmux
+  prefix ]              paste

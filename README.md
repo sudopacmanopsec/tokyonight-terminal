@@ -8,7 +8,7 @@ modules that you **copy and source yourself**.
 | Part | What you get | How it gets there |
 |---|---|---|
 | `nvim/` | NvChad-style dashboard, VSCode-style quick open / palette / project search, file maker (new, rename, copy, delete), and two cheat-sheet popups (`:KeyHelp`, `:TmuxHelp`) | `./install.sh` |
-| `tmux/` | Simple Tokyo Night config, `Ctrl+Space` prefix, vim-style panes, fzf session switcher, cheat sheet on `prefix ?` | `./install.sh` |
+| `tmux/` | tonybanters' tmux config, `Ctrl+A` prefix, vim-style panes, cheat sheet via `tmh` | `./install.sh` |
 | `practice/` | `nvim-playground.txt`, a file of guided exercises | `./install.sh` |
 | `zsh/` | fzf-tab with Tokyo Night colors, `nf` file maker, `Ctrl+P` / `Ctrl+F` pickers, aliases, plugin loader that cannot fail silently | **copy it yourself** (below) |
 
@@ -96,13 +96,13 @@ Neovim in the `user` repo is 0.12.x, which is fine. The aliases use `doas`, Chim
 **His language servers** (optional, from his README): `lua-language-server` from your package manager, then
 `npm install -g vscode-langservers-extracted intelephense typescript-language-server typescript`.
 
-What needs what: `ripgrep` is for project search (`Space /`, `Ctrl+F`), `fzf` for fzf-tab, the pickers and the tmux
-session switcher, `wl-clipboard` for copying out of tmux on Wayland, `fd`, `bat` and `eza` for speed and previews
+What needs what: `ripgrep` is for project search (`Space /`, `Ctrl+F`), `fzf` for fzf-tab, the pickers,
+`wl-clipboard` for copying out of tmux on Wayland, `fd`, `bat` and `eza` for speed and previews
 (everything has a plain fallback).
 
 ## Keys at a glance
 
-Leader is **Space**. `:KeyHelp` / `Space h k` shows the full sheet inside nvim, `tmh` or `prefix ?` shows tmux's.
+Leader is **Space**. `:KeyHelp` / `Space h k` shows the full sheet inside nvim, `tmh` shows tmux's.
 
 | Where | Key | Does |
 |---|---|---|
@@ -113,12 +113,11 @@ Leader is **Space**. `:KeyHelp` / `Space h k` shows the full sheet inside nvim, 
 | nvim | `Space n r` / `n c` / `n d` | rename / copy / delete the current file |
 | nvim | `Space e` | file sidebar |
 | nvim | `Ctrl+s` | save |
-| tmux | `Ctrl+Space` | prefix |
+| tmux | `Ctrl+A` | prefix |
 | tmux | `prefix` `\|` / `-` | split right / down |
 | tmux | `Alt+h j k l` | move between panes, no prefix |
 | tmux | `Alt+1..9` | jump to window |
-| tmux | `prefix` `f` | fuzzy session switcher |
-| tmux | `prefix` `?` | cheat sheet |
+| tmux | `tmh` | cheat sheet |
 | zsh | `Ctrl+P` / `Ctrl+F` | open file / grep the project |
 | zsh | `nf a/b/c.txt` | make folders and file, open it |
 | zsh | `t` / `tmh` / `nvh` / `playground` | tmux session / tmux help / nvim help / practice file |
@@ -143,3 +142,7 @@ rm ~/.config/tmux/tmux.conf ~/.config/tmux/help.txt                         # ba
 ```
 
 Backups of anything the installer replaced sit next to the originals as `<file>.bak-<time>`.
+
+## Credits
+
+tmux config from [tonybanters/tmux-btw](https://github.com/tonybanters/tmux-btw).
