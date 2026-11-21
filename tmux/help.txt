@@ -42,3 +42,9 @@
   y                     copy selection and leave copy mode
   q                     leave copy mode without copying
   prefix ]              paste
+
+== fzf pickers (popups) ==
+  prefix f              fuzzy-switch session
+  prefix t              fuzzy-pick window/tab
+  prefix g              open a project as its own session
+  (project roots: TMUX_FZF_ROOTS="$HOME/code:$HOME/work", default ~/projects ~/dotfiles ~/.config)

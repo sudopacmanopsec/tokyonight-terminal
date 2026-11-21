@@ -7,7 +7,7 @@ modules that you **copy and source yourself**.
 | Part | What you get | How it gets there |
 |---|---|---|
 | `nvim/` | NvChad-style dashboard, to show it do: leader-e, VSCode-style quick open / palette / project search, file maker (new, rename, copy, delete), and two cheat-sheet popups (`:KeyHelp`, `:TmuxHelp`) | `./install.sh` |
-| `tmux/` | tonybanters' tmux config, `Ctrl+A` prefix, vim-style panes, cheat sheet via `tmh` | `./install.sh` |
+| `tmux/` | tonybanters' tmux config, `Ctrl+A` prefix, vim-style panes, fzf pickers (`prefix f` / `t` / `g`), cheat sheet via `tmh` | `./install.sh` |
 | `practice/` | `nvim-playground.txt`, a file of guided exercises | `./install.sh` |
 | `zsh/` | fzf-tab with Tokyo Night colors, `nf` file maker, `Ctrl+P` / `Ctrl+F` pickers, aliases, plugin loader that cannot fail silently | **copy it yourself** (below) |
 

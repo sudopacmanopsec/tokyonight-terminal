@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+# Install: cp tmux-fzf ~/.local/bin/tmux-fzf && chmod +x ~/.local/bin/tmux-fzf
+# Needs fzf. Project roots can be overridden: TMUX_FZF_ROOTS="$HOME/code:$HOME/work"
+set -euo pipefail
+
+FZF_OPTS=(--reverse --border=none --color='bg:#222436,fg:#c8d3f5,hl:#82aaff,bg+:#2f334d,fg+:#c8d3f5,hl+:#86e1fc,pointer:#c099ff,prompt:#82aaff,info:#828bb8')
+
+case "${1:-}" in
+  window)
+    sel=$(tmux list-windows -F '#{window_index}  #{window_name}  #{pane_current_path}' \
+      | fzf "${FZF_OPTS[@]}" --prompt='tab > ') || exit 0
+    tmux select-window -t ":${sel%% *}"
+    ;;
+
+  session)
+    sel=$(tmux list-sessions -F '#{session_name}  (#{session_windows} tabs)' \
+      | fzf "${FZF_OPTS[@]}" --prompt='session > ') || exit 0
+    tmux switch-client -t "${sel%%  *}"
+    ;;
+
+  project)
+    IFS=':' read -ra roots <<< "${TMUX_FZF_ROOTS:-$HOME/projects:$HOME/dotfiles:$HOME/.config}"
+    existing=()
+    for r in "${roots[@]}"; do [ -d "$r" ] && existing+=("$r"); done
+    [ ${#existing[@]} -eq 0 ] && { echo "no project roots found"; sleep 2; exit 1; }
+
+    dir=$(find "${existing[@]}" -mindepth 1 -maxdepth 2 -type d -not -name '.*' 2>/dev/null \
+      | fzf "${FZF_OPTS[@]}" --prompt='project > ') || exit 0
+
+    name=$(basename "$dir" | tr '. ' '__')
+    tmux has-session -t "=$name" 2>/dev/null || tmux new-session -ds "$name" -c "$dir"
+    tmux switch-client -t "=$name"
+    ;;
+
+  *)
+    echo "usage: tmux-fzf {window|session|project}" >&2
+    exit 2
+    ;;
+esac

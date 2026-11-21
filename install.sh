@@ -55,10 +55,21 @@ else
 fi
 put nvim/plugin/workflow.lua  "$HOME/.config/nvim/plugin/workflow.lua"
 put nvim/plugin/helppages.lua "$HOME/.config/nvim/plugin/helppages.lua"
+put nvim/after/plugin/compile-mode.lua "$HOME/.config/nvim/after/plugin/compile-mode.lua"
+put nvim/after/plugin/dap.lua "$HOME/.config/nvim/after/plugin/dap.lua"
+put nvim/after/plugin/gitsigns.lua "$HOME/.config/nvim/after/plugin/gitsigns.lua"
+put nvim/after/plugin/which-key.lua "$HOME/.config/nvim/after/plugin/which-key.lua"
+put nvim/after/plugin/dev.lua "$HOME/.config/nvim/after/plugin/dev.lua"
+put nvim/after/plugin/colors.lua "$HOME/.config/nvim/after/plugin/colors.lua"
+put nvim/after/plugin/completion.lua "$HOME/.config/nvim/after/plugin/completion.lua"
+put nvim/lua/plugin-list.lua "$HOME/.config/nvim/lua/plugin-list.lua"
+put nvim/plugin/lsp.lua      "$HOME/.config/nvim/plugin/lsp.lua"
+put nvim/queries/zig/indents.scm "$HOME/.config/nvim/queries/zig/indents.scm"
 
 # ---- tmux --------------------------------------------------------------------------
 put tmux/tmux.conf "$HOME/.config/tmux/tmux.conf"
 put tmux/help.txt  "$HOME/.config/tmux/help.txt"
+put tmux/tmux-fzf "$HOME/.local/bin/tmux-fzf"; chmod +x "$HOME/.local/bin/tmux-fzf"
 
 # ---- practice file (the `playground` command from zsh/aliases.zsh opens a fresh copy)
 put practice/nvim-playground.txt "$HOME/.local/share/nvim-playground.txt"
