@@ -10,16 +10,6 @@ for _, mode in ipairs({ "n", "i", "v", "x", "o", "c" }) do
 end
 
 -- 2. C / Zig ---------------------------------------------------------------
--- Treesitter parsers (async; needs a C compiler and the `tree-sitter` CLI installed)
-local ok_ts, ts = pcall(require, "nvim-treesitter")
-if ok_ts and ts.install then
-  ts.install({ "c", "cpp", "zig", "make", "cmake" })
-  vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "c", "cpp", "zig" },
-    callback = function() pcall(vim.treesitter.start) end,
-  })
-end
-
 -- clangd extras (source/header switch, AST, type hierarchy)
 local ok_cl, clangd = pcall(require, "clangd_extensions")
 if ok_cl then
@@ -29,7 +19,7 @@ end
 
 -- Format on save through clangd / zls (no extra plugin needed)
 vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = { "*.c", "*.h", "*.cpp", "*.hpp", "*.zig" },
+  pattern = { "*.c", "*.h", "*.cpp", "*.hpp" },
   callback = function() vim.lsp.buf.format({ timeout_ms = 1000 }) end,
 })
 

@@ -6,7 +6,7 @@ modules that you **copy and source yourself**.
 
 | Part | What you get | How it gets there |
 |---|---|---|
-| `nvim/` | NvChad-style dashboard, to show it do: leader-e, VSCode-style quick open / palette / project search, file maker (new, rename, copy, delete), and two cheat-sheet popups (`:KeyHelp`, `:TmuxHelp`) | `./install.sh` |
+| `nvim/` | NvChad-style dashboard, to show it do: leader-e, VSCode-style quick open / palette / project search, file maker (new, rename, copy, delete), and two cheat-sheet popups (`:KeyHelp`, `:TmuxHelp`), plus dap, gitsigns, which-key and compile-mode. Replaces his `plugin-list.lua`, `lsp.lua`, `completion.lua`, `colors.lua`, `manage.lua`, `quickformat.lua`, `tonycontext.lua` and `tonysitter.lua` (originals are backed up as `.bak-<time>`) | `./install.sh` |
 | `tmux/` | tonybanters' tmux config, `Ctrl+A` prefix, vim-style panes, fzf pickers (`prefix f` / `t` / `g`), cheat sheet via `tmh` | `./install.sh` |
 | `practice/` | `nvim-playground.txt`, a file of guided exercises | `./install.sh` |
 | `zsh/` | fzf-tab with Tokyo Night colors, `nf` file maker, `Ctrl+P` / `Ctrl+F` pickers, aliases, plugin loader that cannot fail silently | **copy it yourself** (below) |
@@ -98,6 +98,8 @@ Neovim in the `user` repo is 0.12.x, which is fine. The aliases use `doas`, Chim
 What needs what: `ripgrep` is for project search (`Space /`, `Ctrl+F`), `fzf` for fzf-tab, the pickers,
 `wl-clipboard` for copying out of tmux on Wayland, `fd`, `bat` and `eza` for speed and previews
 (everything has a plain fallback).
+
+**Language servers:** install the ones for the languages you use. `nvim/plugin/lsp.lua` configures lua-language-server, vscode-langservers-extracted (css, json), typescript-language-server, intelephense, zls, nil, rust-analyzer, clangd, c3-lsp, serve-d, haskell-language-server, gopls and templ. A server only works if it is installed and on your `PATH`.
 
 ## Keys at a glance
 

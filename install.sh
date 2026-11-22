@@ -64,6 +64,10 @@ put nvim/after/plugin/colors.lua "$HOME/.config/nvim/after/plugin/colors.lua"
 put nvim/after/plugin/completion.lua "$HOME/.config/nvim/after/plugin/completion.lua"
 put nvim/lua/plugin-list.lua "$HOME/.config/nvim/lua/plugin-list.lua"
 put nvim/plugin/lsp.lua      "$HOME/.config/nvim/plugin/lsp.lua"
+put nvim/plugin/quickformat.lua "$HOME/.config/nvim/plugin/quickformat.lua"
+put nvim/plugin/tonycontext.lua "$HOME/.config/nvim/plugin/tonycontext.lua"
+put nvim/plugin/tonysitter.lua "$HOME/.config/nvim/plugin/tonysitter.lua"
+put nvim/lua/manage.lua "$HOME/.config/nvim/lua/manage.lua"
 put nvim/queries/zig/indents.scm "$HOME/.config/nvim/queries/zig/indents.scm"
 
 # ---- tmux --------------------------------------------------------------------------
