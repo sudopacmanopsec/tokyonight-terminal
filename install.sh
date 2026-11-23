@@ -102,6 +102,6 @@ cat <<'MSG'
 
 Done. nvim and tmux are set up. zsh was NOT touched.
   - run nvim once and let his plugin manager finish installing, then restart it
-  - tmux kill-server ; tmux          (or reload with: Ctrl+A, then r)
+  - tmux kill-server ; tmux          (or reload with: Ctrl+space then r)
   - zsh add-on (optional, copy-only): see "zsh add-on" in README.md
 MSG
