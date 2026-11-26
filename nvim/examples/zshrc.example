@@ -1,0 +1,31 @@
+# Example zshrc: reference only. NOT installed by anything in this repo.
+# Copy the parts you want into your own ~/.zshrc.
+
+export EDITOR=nvim
+export VISUAL=nvim
+export PATH="$HOME/.local/bin:$PATH"
+
+alias vi=nvim
+alias vim=nvim
+alias v=nvim
+
+# History
+HISTFILE=~/.zsh_history
+HISTSIZE=50000
+SAVEHIST=50000
+setopt SHARE_HISTORY HIST_IGNORE_DUPS HIST_IGNORE_SPACE
+
+# Completion
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# Prompt
+autoload -Uz vcs_info
+precmd() { vcs_info }
+setopt PROMPT_SUBST
+zstyle ':vcs_info:git:*' formats ' (%b)'
+PROMPT='%F{blue}%~%f%F{yellow}${vcs_info_msg_0_}%f %# '
+
+# Vi mode
+bindkey -v
+export KEYTIMEOUT=1

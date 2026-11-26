@@ -1,4 +1,3 @@
-
 -- LSP defaults
 vim.lsp.config("*", {
     root_markers = { ".git" },
@@ -314,6 +313,46 @@ vim.lsp.config["nil_ls"] = {
     },
 }
 
+
+-- Python
+vim.lsp.config["pylsp"] = {
+    cmd = { "pylsp" },
+    filetypes = { "python" },
+
+    root_markers = {
+        "pyproject.toml",
+        "setup.py",
+        "setup.cfg",
+        "requirements.txt",
+        "Pipfile",
+        ".git",
+    },
+
+    capabilities = capabilities,
+
+    settings = {
+        pylsp = {
+            plugins = {
+                -- Ruff handles linting and formatting.
+                ruff = {
+                    enabled = true,
+                    formatEnabled = true,
+                    executable = "/usr/bin/ruff",
+                    extendSelect = { "I" },
+                },
+
+                -- Avoid duplicate diagnostics and formatters.
+                pycodestyle = { enabled = false },
+                pyflakes = { enabled = false },
+                mccabe = { enabled = false },
+                autopep8 = { enabled = false },
+                yapf = { enabled = false },
+            },
+        },
+    },
+}
+
+
 -- Rust
 vim.lsp.config["rust_analyzer"] = {
     cmd = { "rust-analyzer" },
@@ -501,6 +540,7 @@ local servers = {
     "zls",
     "nil_ls",
     "rust_analyzer",
+    "pylsp",
     "clangd",
     "c3lsp",
     "serve_d",
@@ -513,4 +553,3 @@ local servers = {
 for _, server in ipairs(servers) do
     vim.lsp.enable(server)
 end
-

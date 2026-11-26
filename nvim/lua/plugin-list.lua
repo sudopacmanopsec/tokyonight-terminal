@@ -1,6 +1,7 @@
 return {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
+    "nvim-tree/nvim-tree.lua",
     "hrsh7th/nvim-cmp",
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-path",
@@ -13,6 +14,7 @@ return {
     "tpope/vim-fugitive",
     "mbbill/undotree",
     "ojroques/vim-oscyank",
+    "stevearc/oil.nvim",
     "lewis6991/gitsigns.nvim",
     "folke/which-key.nvim",
     "mfussenegger/nvim-dap",
